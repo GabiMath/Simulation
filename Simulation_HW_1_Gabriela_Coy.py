@@ -3,6 +3,7 @@ import time # Information about time of execution -->https://stackoverflow.com/q
 from datetime import timedelta
 
 #Recursive formula option
+#This code is very slow! It just can to compute the first  45  Lucas Numbers in an hour!
 
 def lucas(n):
     if(n == 0): #Initial condition
@@ -27,6 +28,7 @@ print('Tiempo de ejecución: ',timedelta(seconds=end-start))
 plt.plot([i for i in range(x)],l)
 
 # For loop option
+#This code computes a very large amount of Lucas numbers quickly, but for large  𝑛 , the plot present some problems, because  𝐿𝑛  is too large.
 
 n = int(input('Write the value of n: '))
 l1=1 #Initial condition
