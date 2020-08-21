@@ -1,3 +1,4 @@
+import numpy as np
 import matplotlib.pyplot as plt
 import time # Information about time of execution -->https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
 from datetime import timedelta
@@ -49,3 +50,20 @@ end1 = time.time()
 
 print('Tiempo de ejecución: ',timedelta(seconds=end1-start1))
 plt.plot([i for i in range(n)], lucas)
+
+#Analog of Binet's Fibonacci number formula for Lucas numbers
+
+n = int(input('Write the value of n: '))
+
+def binetsanalog(n):
+    return int(round(((1+np.sqrt(5))/2)**n+((1-np.sqrt(5))/2)**n))
+
+start = time.time()
+for i in range(n):
+    print(i+1, ':', binetsanalog(i+1))
+end1 = time.time()
+
+print('Tiempo de ejecución: ',timedelta(seconds=end1-start))
+plt.plot([i for i in range(n)], [binetsanalog(i) for i in range(n)])
+
+#The diference in these algorithms is the number of iterations. So, since the recursive algorithm need to do more iterations is more slowly.
